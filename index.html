@@ -1,16 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suhani Agarwal | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Themed Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #a855f7;
+      --secondary: #1f1b2e;
+      --accent: #f472b6;
+      --bg: #0e0a1f;
+      --text: #f3f4f6;
+      --muted: #d4d4d8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--secondary);
+      padding: 2rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    nav {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      background-color: var(--secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: var(--primary);
+      color: #fff;
+      outline: none;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .box {
+      background-color: var(--secondary);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .about p,
+    .contact p {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .skills span {
+      background: var(--bg);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: inset 0 0 0 2px var(--primary);
+    }
+
+    .project h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .project a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .project a:hover,
+    .project a:focus {
+      background-color: #9333ea;
+      outline: none;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover,
+    .contact a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--secondary);
+      color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1.5rem 1rem 3rem;
+      }
+
+      nav {
+        position: static;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <h1>Suhani Agarwal</h1>
-    <p>3rd Year B.Tech CSE Student @ VIT Vellore</p>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
@@ -19,44 +212,43 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <h1>Your Name</h1>
+    <p>Full-Stack Developer • Creative Coder</p>
   </header>
 
-  <section id="about" class="box about">
+  <section id="about" class="about box">
     <h2>About Me</h2>
-    <p>Hello! I'm Suhani Agarwal, a passionate Computer Science student  with a passion for building impactful projects using innovative approaches. I am particularly interested in coding and machine learning applications that contribute to practical solutions. </p>
+    <p>Hello! I'm a developer passionate about creating beautiful, functional, and accessible web experiences.</p>
   </section>
 
-  <section id="skills" class="box">
+  <section id="skills" class="skills box">
     <h2>Skills</h2>
     <div class="skills">
-      <span>C / C++</span>
-      <span>Data Structures & Algorithms</span>
-      <span>Java</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React</span>
+      <span>Node.js</span>
       <span>Python</span>
-      <span>Machine Learning</span>
-      <span>HTML / CSS</span>
-      <span>Git & GitHub</span>
-      <span>Problem Solving</span>
     </div>
   </section>
 
-  <section id="projects" class="box">
+  <section id="projects" class="project box">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>Flight Delay Detection Using Machine Learning</h3>
-      <p>A machine learning project to detect and predict flight delays using data-driven insights. The model helps forecast potential delays based on key flight data, enhancing travel planning and efficiency.</p>
-      <a href="https://github.com/suhani020/flight-delay" target="_blank">View on GitHub</a>
-    </div>
+    <h3>Portfolio Website</h3>
+    <p>A personal website to showcase my work and skills.</p>
+    <a href="#">View Project</a>
   </section>
 
-  <section id="contact" class="box contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:suhani.agarwal2023@vitstudent.ac.in">suhani.agarwal2023@vitstudent.ac.in</a></p>
-    <p>GitHub: <a href="https://github.com/suhani020" target="_blank">suhani020</a></p>
+  <section id="contact" class="contact box">
+    <h2>Contact</h2>
+    <p>Want to work together or just say hello? <a href="mailto:your@email.com">Send me an email</a>.</p>
   </section>
 
   <footer>
-    <p>©️ 2025 Suhani Agarwal. All rights reserved.</p>
+    &copy; 2025 Your Name. All rights reserved.
   </footer>
+
 </body>
 </html>
+
